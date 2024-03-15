@@ -1,5 +1,5 @@
 from django.db import models
-
+from question_bank_api.models.questionbank_model import QuestionBank
 
 #
 # from .base_model.base_model import QuestionBankBaseModel
@@ -16,10 +16,9 @@ from django.db import models
 
 
 class QuestionOption(models.Model):
-    from question_bank_api.models.questionbank_model import QuestionBank
-    question = models.ForeignKey(QuestionBank, on_delete=models.CASCADE, related_name='options')
+    question = models.ForeignKey(QuestionBank, on_delete=models.CASCADE)
     option = models.CharField(max_length=255, default='')
-    is_correct = models.BooleanField(default=False)
+    isCorrect = models.BooleanField(default=False)
 
     def __str__(self):
         return self.option

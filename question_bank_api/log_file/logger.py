@@ -29,8 +29,10 @@
 import json
 from datetime import datetime
 
+
 class Logger:
-    def __init__(self, filename='log.json'):
+
+    def __init__(self, filename='log.txt'):
         self.filename = filename
 
     def log(self, message, log_type='info'):
